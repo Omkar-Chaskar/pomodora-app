@@ -1,3 +1,4 @@
+
 import "./styles.css";
 import { Routes, Route } from "react-router-dom";
 import Header from "./component/header";
@@ -11,7 +12,7 @@ import Edit from "./component/edit";
 import Login from "./component/login";
 import Signup from "./component/signup";
 
-export default function App() {
+function App() {
   return (
     <div className="App">
       <Header />
@@ -29,3 +30,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
