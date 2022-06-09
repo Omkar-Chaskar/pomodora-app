@@ -7,6 +7,9 @@ import Archive from "./component/archive";
 import Trash from "./component/trash";
 import AddNote from "./component/addnote";
 import Pomodora from "./component/pomodora";
+import Edit from "./component/edit";
+import Login from "./component/login";
+import Signup from "./component/signup";
 
 export default function App() {
   return (
@@ -19,6 +22,9 @@ export default function App() {
         <Route path="Trash" element={<Trash />} />
         <Route path="AddNote" element={<AddNote />} />
         <Route path="Pomodora" element={<Pomodora />}></Route>
+        <Route path="Edit" element={<Edit />}></Route>
+        <Route path="Login" element={<Login />}></Route>
+        <Route path="Signup" element={<Signup />}></Route>
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 import "../styles.css";
-import { MdOutlineArchive, MdDeleteOutline, MdPushPin } from "react-icons/md";
+import { MdOutlineArchive, MdDeleteOutline, MdPushPin, MdOutlineEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export default function Pin() {
@@ -23,6 +23,9 @@ export default function Pin() {
           <div className="card__action-icons p3 text-grey">
             <MdOutlineArchive className="ptr" />
             <MdDeleteOutline className="ptr" />
+            <Link className="text-dark" to="">
+            <MdOutlineEdit />
+            </Link>
           </div>
         </div>
       </li>
@@ -43,6 +46,9 @@ export default function Pin() {
           <div className="card__action-icons p3 text-grey">
             <MdOutlineArchive className="ptr" />
             <MdDeleteOutline className="ptr" />
+            <Link className="text-dark" to="">
+            <MdOutlineEdit />
+            </Link>
           </div>
         </div>
       </li>

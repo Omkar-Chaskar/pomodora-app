@@ -39,10 +39,11 @@ export default function AddNote() {
           />
         </section>
         <section className="note-timer-container">
-          <label htmlFor="cars" className="bold">
+          <label htmlFor="timer" className="bold">
             Time :{" "}
           </label>
-          <select name="cars" id="cars">
+          <select name="timer" id="timer">
+            <option defaultValue>Select a Timer</option>
             <option value="5">5 min</option>
             <option value="10">10 min</option>
             <option value="15">15 min</option>
@@ -58,9 +59,12 @@ export default function AddNote() {
           </select>
         </section>
         <br />
-        <Link to="/" className="button button-secondary ptr bold">
-          Save
-        </Link>
+
+        <button>
+          <Link to="/" className="button button-secondary ptr bold">
+            Save
+          </Link>
+        </button>
       </div>
     </div>
   );

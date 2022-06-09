@@ -1,6 +1,7 @@
 import "../styles.css";
 import { BsPin } from "react-icons/bs";
-import { MdOutlineArchive, MdDeleteOutline } from "react-icons/md";
+import { MdOutlineArchive, MdDeleteOutline, 
+  MdOutlineEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export default function Note() {
@@ -24,6 +25,9 @@ export default function Note() {
           <div className="card__action-icons p3 text-grey">
             <MdOutlineArchive className="ptr" />
             <MdDeleteOutline className="ptr" />
+            <Link className="text-dark" to="">
+            <MdOutlineEdit />
+            </Link>
           </div>
         </div>
       </li>
@@ -44,6 +48,9 @@ export default function Note() {
           <div className="card__action-icons p3 text-grey">
             <MdOutlineArchive className="ptr" />
             <MdDeleteOutline className="ptr" />
+            <Link className="text-dark" to="">
+            <MdOutlineEdit />
+            </Link>
           </div>
         </div>
       </li>
