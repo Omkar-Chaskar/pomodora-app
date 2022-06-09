@@ -6,7 +6,10 @@ export default function Signup() {
 
   return (
     <section className="signup">
-      <form className="form-action" id="form">
+      <form
+        className="form-action"
+        id="form"
+      >
         <h4 className="bold text-center login-header">SignUp</h4>
         <br />
         <div className="login-container">

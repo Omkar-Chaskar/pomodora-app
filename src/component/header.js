@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import "../styles.css";
 
 export default function Header() {
+
   return (
-    <nav className="navigation head-nav">
+    <nav className="navigation">
       <Link to="/">
-        <h2 className="nav-logo">Pomodorate</h2>
+        <div className="nav-logo">Pomodorate</div>
       </Link>
       <div className="nav-submenu">
         <ul className="nav-flex-row">

@@ -64,7 +64,6 @@ textarea:focus {
 
 textarea {
   height: 3rem;
-  overflow: hidden;
 }
 
 #tags {

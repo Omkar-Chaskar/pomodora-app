@@ -22,9 +22,9 @@ export default function App() {
         <Route path="Trash" element={<Trash />} />
         <Route path="AddNote" element={<AddNote />} />
         <Route path="Pomodora" element={<Pomodora />}></Route>
-        <Route path="Edit" element={<Edit />} />
-        <Route path="Login" element={<Login />} />
-        <Route path="Signup" element={<Signup />} />
+        <Route path="/:NoteId" element={<Edit />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
       </Routes>
     </div>
   );
