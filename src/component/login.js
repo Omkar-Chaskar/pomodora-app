@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import {
+  initialLogInData,
+  guestData
+} from "../utils/constantData/authConstant";
+import { useAuth } from "../context";
+import { Toaster } from "react-hot-toast";
 
 export default function Login() {
+  const [logInData, setLogInData] = useState(initialLogInData);
   const [passVisible, setPassVisible] = useState(true);
+  const { logInHandler } = useAuth();
 
+  const logInChaneHnadler = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setLogInData((prevData) => ({ ...prevData, [name]: value }));
+  };
   return (
     <section className="login">
       <form className="form-action" id="form">
@@ -19,6 +32,7 @@ export default function Login() {
             id="email"
             name="email"
             placeholder="Jane@compony.com"
+            onChange={logInChaneHnadler}
             required
           />
           <p className="input-danger" id="invalid-email"></p>
@@ -34,6 +48,7 @@ export default function Login() {
             minLength="8"
             maxLength="15"
             placeholder="********"
+            onChange={logInChaneHnadler}
             required
           />
           <span className="flex-center">
@@ -54,6 +69,9 @@ export default function Login() {
               className="button button-primary btn-full bold btn-submit"
               id="btn-submit"
               type="submit"
+              onClick={(e) => {
+                logInHandler(logInData);
+              }}
             >
               Login
             </button>
@@ -61,6 +79,9 @@ export default function Login() {
               className="button button-secondary btn-full bold btn-submit"
               id="btn-submit"
               type="submit"
+              onClick={(e) => {
+                logInHandler(guestData);
+              }}
             >
               Guest Login
             </button>
@@ -70,6 +91,7 @@ export default function Login() {
           </div>
         </div>
       </form>
+      <Toaster position="bottom-right" reverseOrder={true} />
     </section>
   );
 }

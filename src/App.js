@@ -10,22 +10,33 @@ import Pomodora from "./component/pomodora";
 import Edit from "./component/edit";
 import Login from "./component/login";
 import Signup from "./component/signup";
+import { useAuth } from "./context";
 
 export default function App() {
+  const { user } = useAuth();
+  const { loginStatus } = user;
+
   return (
     <div className="App">
       <Header />
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Archive" element={<Archive />} />
-        <Route path="Trash" element={<Trash />} />
-        <Route path="AddNote" element={<AddNote />} />
-        <Route path="Pomodora" element={<Pomodora />}></Route>
-        <Route path="/:NoteId" element={<Edit />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Signup" element={<Signup />} />
-      </Routes>
+
+      {loginStatus ? (
+        <>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="Archive" element={<Archive />} />
+            <Route path="Trash" element={<Trash />} />
+            <Route path="AddNote" element={<AddNote />} />
+            <Route path="Pomodora" element={<Pomodora />}></Route>
+            <Route path="/:NoteId" element={<Edit />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
+          </Routes>
+        </>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }

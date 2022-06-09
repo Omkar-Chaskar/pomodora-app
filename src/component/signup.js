@@ -1,14 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { initialSignUpData } from "../utils/constantData/authConstant";
+import { useAuth } from "../context";
+import { Toaster } from "react-hot-toast";
 
 export default function Signup() {
+  const [signUpData, setSignUpData] = useState(initialSignUpData);
   const [passVisible, setPassVisible] = useState(true);
+  const { signUpHandler } = useAuth();
+
+  const signupChangeHandler = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setSignUpData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
   return (
     <section className="signup">
       <form
         className="form-action"
         id="form"
+        onSubmit={(e) => e.preventDefault()}
       >
         <h4 className="bold text-center login-header">SignUp</h4>
         <br />
@@ -22,6 +34,7 @@ export default function Signup() {
             id="first-name"
             name="first-name"
             placeholder="Adarsh"
+            onChange={signupChangeHandler}
             required
           />
           <p className="input-danger" id="invalid-name"></p>
@@ -35,6 +48,7 @@ export default function Signup() {
             id="last-name"
             name="last-name"
             placeholder="Balika"
+            onChange={signupChangeHandler}
             required
           />
           <p className="input-danger" id="invalid-email"></p>
@@ -48,6 +62,7 @@ export default function Signup() {
             id="email"
             name="email"
             placeholder="Adarsh@balika.com"
+            onChange={signupChangeHandler}
             required
           />
           <p className="input-danger" id="invalid-email"></p>
@@ -63,6 +78,7 @@ export default function Signup() {
             minLength="8"
             maxLength="15"
             placeholder="********"
+            onChange={signupChangeHandler}
             required
           />
           <span className="flex-center">
@@ -89,6 +105,9 @@ export default function Signup() {
               className="button button-primary btn-full bold btn-submit"
               id="btn-submit"
               type="submit"
+              onClick={(e) => {
+                signUpHandler(signUpData);
+              }}
             >
               Create New Account
             </button>
@@ -98,6 +117,7 @@ export default function Signup() {
           </div>
         </div>
       </form>
+      <Toaster position="bottom-right" reverseOrder={true} />
     </section>
   );
 }
