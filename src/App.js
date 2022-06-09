@@ -1,4 +1,3 @@
-
 import "./styles.css";
 import { Routes, Route } from "react-router-dom";
 import Header from "./component/header";
@@ -12,7 +11,7 @@ import Edit from "./component/edit";
 import Login from "./component/login";
 import Signup from "./component/signup";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Header />
@@ -23,12 +22,10 @@ function App() {
         <Route path="Trash" element={<Trash />} />
         <Route path="AddNote" element={<AddNote />} />
         <Route path="Pomodora" element={<Pomodora />}></Route>
-        <Route path="Edit" element={<Edit />}></Route>
-        <Route path="Login" element={<Login />}></Route>
-        <Route path="Signup" element={<Signup />}></Route>
+        <Route path="Edit" element={<Edit />} />
+        <Route path="Login" element={<Login />} />
+        <Route path="Signup" element={<Signup />} />
       </Routes>
     </div>
   );
 }
-
-export default App;

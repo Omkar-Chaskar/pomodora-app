@@ -3,6 +3,10 @@
   font-weight: bold;
 }
 
+.text-white {
+  color: var(--primary-secondary);
+}
+
 .sidebar-nav-list {
   margin-top: 1rem;
 }

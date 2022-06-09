@@ -3,46 +3,42 @@ import { Link } from "react-router-dom";
 
 export default function AddNote() {
   return (
-    <div className="AddNote">
+    <div className="AddNote flex-col">
       <div className="add-note-container">
-        <section className="note-title-container">
-          <textarea
-            id="w3review"
+        <section className="note-title-container tags-input">
+          <input
             name="notetittle"
-            rows="2"
-            cols="50"
             placeholder="Note Tittle"
             className="note-textarea"
+            maxLength="50"
           />
         </section>
-        <section className="note-body-container">
+        <section className="note-body-container tags-input">
           <textarea
-            id="w3review"
             name="notebody"
-            rows="6"
-            cols="50"
-            placeholder="Note body"
+            placeholder="Enter Note in 250 letters"
             className="note-textarea"
+            maxLength="250"
           />
         </section>
-        <section className="note-tags-container">
-          <label htmlFor="notetags" className="bold p2">
-            Tag :{" "}
-          </label>
-          <textarea
-            id="notetags"
-            name="notetags"
-            rows="1"
-            cols="30"
-            placeholder="Note Tags"
-            className="note-textarea"
-          />
+        <section className="note-tags-container tags-input">
+          <ul id="tags">
+            <li className="tag">
+              <span className="tag-title">tag 1</span>
+              <span className="tag-close-icon">X</span>
+            </li>
+            <li className="tag">
+              <span className="tag-title">tag 2</span>
+              <span className="tag-close-icon">X</span>
+            </li>
+          </ul>
+          <input type="text" placeholder="Press enter to add tags" />
         </section>
-        <section className="note-timer-container">
-          <label htmlFor="timer" className="bold">
+        <section className="note-timer-container ">
+          <label htmlFor="Timer" className="bold">
             Time :{" "}
           </label>
-          <select name="timer" id="timer">
+          <select name="Timer" id="Timer" className="p1">
             <option defaultValue>Select a Timer</option>
             <option value="5">5 min</option>
             <option value="10">10 min</option>

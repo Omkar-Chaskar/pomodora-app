@@ -3,10 +3,19 @@ import "../styles.css";
 
 export default function Header() {
   return (
-    <nav className="navigation">
+    <nav className="navigation head-nav">
       <Link to="/">
-        <div className="nav-logo">Pomodora Task</div>
+        <h2 className="nav-logo">Pomodorate</h2>
       </Link>
+      <div className="nav-submenu">
+        <ul className="nav-flex-row">
+          <li className="nav-submenu-sub">
+              <Link to="/Login" className="bold button button-primary p2">
+                LogIn
+              </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }

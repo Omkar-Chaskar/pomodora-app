@@ -1,57 +1,61 @@
 import "../styles.css";
-import { MdOutlineArchive, MdDeleteOutline, MdPushPin, MdOutlineEdit } from "react-icons/md";
+import {
+  MdOutlineArchive,
+  MdDeleteOutline,
+  MdOutlineEdit,
+} from "react-icons/md";
+import { BsPin } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-export default function Pin() {
+export default function Note() {
   return (
     <ul className="flex-col">
-      <p className="p3 bold center">Pined Notes</p>
-      <li className="card">
-        <div className="card__primary-action card__primary-action-column">
-          <MdPushPin
-            name="pin item"
-            className="badge-up-right-corner p3 text-grey ptr"
-          />
-          <Link className="text-dark" to="Pomodora">
+      <p className="p3 bold center">Pined Tasks</p>
+      <Link className="text-dark" to="Pomodora">
+        <li className="card">
+          <div className="card__primary-action card__primary-action-column">
+            <BsPin
+              name="pin item"
+              title="Unpin"
+              className="badge-up-right-corner p3 text-grey ptr"
+            />
             <div className="card__primary">
-              <h2 className="p3 bold">Note Title....</h2>
+              <h2 className="p3 bold">Note Title</h2>
+              <p className="p2">Note Body</p>
+              <ul className="flex card-badges">
+                <li className="tag">
+                  <span className="tag-title">Tag 1</span>
+                </li>
+                <li className="tag">
+                  <span className="tag-title">Tag 2</span>
+                </li>
+              </ul>
+              <div className="flex flex-align-end">
+                <p className=" p1 bold">60 Min</p>
+              </div>
             </div>
-          </Link>
-        </div>
-        <div className="card__actions">
-          <p className="text-grey p1">Created on 26/10/2021</p>
-          <div className="card__action-icons p3 text-grey">
-            <MdOutlineArchive className="ptr" />
-            <MdDeleteOutline className="ptr" />
-            <Link className="text-dark" to="">
-            <MdOutlineEdit />
-            </Link>
           </div>
-        </div>
-      </li>
-      <li className="card">
-        <div className="card__primary-action card__primary-action-column">
-          <MdPushPin
-            name="pin item"
-            className="badge-up-right-corner p3 text-grey ptr"
-          />
-          <Link className="text-dark" to="Pomodora">
-            <div className="card__primary">
-              <h2 className="p3 bold">Note Title....</h2>
+
+          <div className="card__actions">
+            <p className="text-grey p1">Created on 12/12/2012</p>
+            <div className="card__action-icons p3 text-grey">
+              <MdOutlineArchive
+                name="archive item"
+                title="Archive"
+                className="ptr"
+              />
+              <MdDeleteOutline
+                name="trash item"
+                title="Trash"
+                className="ptr"
+              />
+              <Link className="text-dark" to="Edit">
+                <MdOutlineEdit name="edit" title="Edit" className="ptr" />
+              </Link>
             </div>
-          </Link>
-        </div>
-        <div className="card__actions">
-          <p className="text-grey p1">Created on 26/10/2021</p>
-          <div className="card__action-icons p3 text-grey">
-            <MdOutlineArchive className="ptr" />
-            <MdDeleteOutline className="ptr" />
-            <Link className="text-dark" to="">
-            <MdOutlineEdit />
-            </Link>
           </div>
-        </div>
-      </li>
+        </li>
+      </Link>
     </ul>
   );
 }
