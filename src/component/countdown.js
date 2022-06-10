@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import moment from "moment";
 
@@ -20,8 +20,6 @@ export default function Countdown(props) {
             .minute(0)
             .second(remainingTime)
             .format("mm : ss")
-            
-            useDocumentTitle(remainingTime);
           }
         }
       </CountdownCircleTimer>
