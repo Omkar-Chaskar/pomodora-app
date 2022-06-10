@@ -49,7 +49,7 @@ export default function Pomodora() {
               </div>
               <div className="times">
                 <div className="times">
-                  <Countdown time={note.timer} counting={counting} id={key} />
+                  <Countdown time={note.timer * 60} counting={counting} id={key} />
                 </div>
               </div>
               <div className="pomodora-btn">
@@ -65,7 +65,7 @@ export default function Pomodora() {
                 <button
                   className="button button-secondary bold ptr"
                   onClick={handleClick}
-                  value={note.timer}
+                  value={note.timer * 60}
                 >
                   Reset
                 </button>
