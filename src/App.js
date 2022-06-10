@@ -28,7 +28,7 @@ export default function App() {
             <Route path="Archive" element={<Archive />} />
             <Route path="Trash" element={<Trash />} />
             <Route path="AddNote" element={<AddNote />} />
-            <Route path="Pomodora" element={<Pomodora />}></Route>
+            <Route path="/Pomodora/:NoteId" element={<Pomodora />}></Route>
             <Route path="/:NoteId" element={<Edit />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
